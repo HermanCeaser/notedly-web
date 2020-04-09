@@ -1,8 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom'
+//import ReactDOM from 'react-dom'
+import './App.css';
 
 //import pages component
-import Pages from './components/pages'
+import Pages from './components/pages';
 
 
 const App = () => {

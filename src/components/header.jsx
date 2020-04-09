@@ -1,12 +1,13 @@
 import React from 'react'
 import logo from '../img/logo.svg'
+import './header.css'
 
 const Header = () => {
 	return(
-		<Header>
+		<header>
 			<img src= {logo} alt="Notedly Logo" height="40"/>
-			<h1>Notedly</h1>
-		</Header>
+			<h1 id="logo-text">Notedly</h1>
+		</header>
 	)
 }
-export default Header
+export default Header;
