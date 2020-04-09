@@ -1,16 +1,30 @@
 import React from 'react';
-//import ReactDOM from 'react-dom'
 import './App.css';
 
-//import pages component
+//Import Apollo client Libraries
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
+
+
+//import our routes
 import Pages from './components/pages';
+
+//Configure our API URI and Cache
+const uri =  process.env.REACT_APP_URI;
+const cache = new InMemoryCache();
+
+//Configure Apollo client
+const client = new ApolloClient({
+	uri,
+	cache,
+	connectToDevTools: true
+});
 
 
 const App = () => {
   return (
-    <div className="App">
+  	<ApolloProvider client= {client}>
       <Pages />
-    </div>
+    </ApolloProvider>
   );
 }
 
