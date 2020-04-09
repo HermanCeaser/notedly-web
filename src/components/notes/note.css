@@ -1,0 +1,20 @@
+.note {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+@media(min-width: 500px) {
+	.metadata {
+	display: flex;
+	align-items: top;
+	}
+}
+
+
+.meta-info {
+	padding-right: 1em; 
+}
+
+.user-actions {
+	margin-left: auto;
+}
