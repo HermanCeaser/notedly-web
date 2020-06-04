@@ -24,3 +24,23 @@ a:hover, a:focus {
 code, pre {
 	max-width: 100%;
 }
+
+button {
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	font-size: 18px;
+	color: #fff;
+	background-color: #0077cc;
+	cursor: pointer;
+	margin-bottom: 5px;
+}
+
+button:hover {
+	opacity: 0.8;
+}
+
+button:active {
+	background-color: #16018a; 
+}
+

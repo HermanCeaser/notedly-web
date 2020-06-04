@@ -28,7 +28,7 @@ const Navigation = () => {
                 <li>
                     <Link to="/new">
                         <span aria-hidden="true" role="img">➕</span>&nbsp;
-                        New
+                        New Note
                     </Link>
                 </li>
         	</ul>

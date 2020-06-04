@@ -32,16 +32,44 @@ const Home = () => {
 	})
 
 	//Our useQuery react Hook
-	const { data, loading, error} = useQuery(GET_NOTES);
+	const { data, loading, error, fetchMore} = useQuery(GET_NOTES);
 
 	//if loading, display loading message
 	if(loading) return (<p> Loading ... </p>);
 	
 	//If error show error message
-	if(error) return (<p> Error in fetching data due to: ${error.message}</p>);
+	if(error) return (<p> ${error.message}</p>);
 
+	//if data loaded successfully
 	return (
-		<NoteFeed notes={data.noteFeed.notes} />
+		<React.Fragment>
+			<NoteFeed notes={data.noteFeed.notes} />
+
+			{/*Only display the button when hasNextPage is true*/}
+			{data.noteFeed.hasNextPage && (
+				<button
+					onClick={
+						()=> fetchMore({
+						variables: { cursor: data.noteFeed.cursor},
+						updateQuery: (previousResult, { fetchMoreResult }) => {
+							return {
+								noteFeed: {
+									cursor: fetchMoreResult.noteFeed.cursor,
+									hasNextPage: fetchMoreResult.noteFeed.hasNextPage,
+									notes: [
+										...previousResult.noteFeed.notes,
+										...fetchMoreResult.noteFeed.notes
+									],
+									__typename: 'noteFeed'
+								}
+							}
+						}
+					})
+				}
+				>&#8594;
+				</button>
+			)}
+		</React.Fragment>
 	)
 }
 Home.displayName = 'Home';
