@@ -1,7 +1,7 @@
 # Notedly API
 
 This repository contains code for the notedly WebApp 
-It Consumes the [Notedly Api](https://github.com/HermanCeaser/notedly.git)
+It Consumes the [Notedly Api](https://notedly-api.herokuapp.com/api) from the [Notedly-Api-Repo](https://github.com/HermanCeaser/notedly.git)
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Tools Used
