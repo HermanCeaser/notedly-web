@@ -24,6 +24,7 @@ const NoteForm = ({ content, action }) => {
                     console.log(value);
                 }
             } >
+                <h3> Create Your Note Here</h3>
                 <textarea 
                     required 
                     type="text" 

@@ -10,7 +10,7 @@ import { setContext } from 'apollo-link-context';
 import Pages from './components/pages';
 
 //Configure our API URI and Cache
-const uri =  process.env.REACT_APP_URI;
+const uri =  process.env.REACT_APP_URI_WEB;
 const cache = new InMemoryCache();  
 const httpLink = createHttpLink({ uri });
 
